@@ -297,5 +297,39 @@ const answer10 = data.reduce((acc, curr) => {
 }, []);
 console.log({ answer10 });
 
+
+
+// Этот код использует метод reduce() для группировки массива объектов people по возрасту.
+const people = [
+  { name: 'Alice', age: 21 },
+  { name: 'Bob', age: 25 },
+  { name: 'Charlie', age: 21 }
+];
+
+const groupedByAge = people.reduce((accumulator, person) => {
+  if (!accumulator[person.age]) {
+    accumulator[person.age] = [];
+  }
+  accumulator[person.age].push(person.name);
+  return accumulator;
+}, {});
+
+console.log(groupedByAge);
+
+
+
+// Этот код использует метод reduce() для подсчета количества каждого фрукта в массиве fruits.
 const answer11 = data.map(user => user.username.toLowerCase()); 
 console.log({ answer11 });
+
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+const countFruits = fruits.reduce((accumulator, fruit) => {
+  if (!accumulator[fruit]) {
+    accumulator[fruit] = 0;
+  }
+  accumulator[fruit]++;
+  return accumulator;
+}, {});
+
+console.log(countFruits);
